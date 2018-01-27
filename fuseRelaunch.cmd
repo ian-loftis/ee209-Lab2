@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "U:/Documents/ee209/Lab 2 - Alarm/alarm_tb_isim_beh.exe" -prj "U:/Documents/ee209/Lab 2 - Alarm/alarm_tb_beh.prj" "work.alarm_tb" "work.glbl" 

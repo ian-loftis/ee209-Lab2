@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "U:/Documents/ee209/Lab 2 - Alarm/alarm_top.xst" -ofn "U:/Documents/ee209/Lab 2 - Alarm/alarm_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc test_nexys2.ucf -p xc3s500e-fg320-4 "alarm_top.ngc" alarm_top.ngd  
+map -intstyle ise -p xc3s500e-fg320-4 -cm area -ir off -pr off -c 100 -o alarm_top_map.ncd alarm_top.ngd alarm_top.pcf 
+par -w -intstyle ise -ol high -t 1 alarm_top_map.ncd alarm_top.ncd alarm_top.pcf 
+trce -intstyle ise -v 3 -s 4 -n 3 -fastpaths -xml alarm_top.twx alarm_top.ncd -o alarm_top.twr alarm_top.pcf -ucf test_nexys2.ucf 
+bitgen -intstyle ise -f alarm_top.ut alarm_top.ncd 
+bitgen -intstyle ise -f alarm_top.ut alarm_top.ncd 

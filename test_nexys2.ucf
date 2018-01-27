@@ -1,0 +1,71 @@
+# UCF file for NEXYS 2 board
+# File: test_Nexys2_verilog.ucf
+# Date: 2/14/08
+# Gandhi Puvvada
+
+# Inactivate the Chip-Enables and other control pins of the 
+# memories on the Nexys-2 board 
+# Intel StrataFlash JS28F128J3D35 and Micron PSDRAM MT45W8MW16
+# NET St_ce_bar LOC = R5;
+# NET St_rp_bar LOC = T5;
+# NET Mt_ce_bar LOC = R6;
+# NET Mt_St_oe_bar LOC = T2;
+# NET Mt_St_we_bar LOC = N7;
+
+
+NET CLKPORT  LOC = B8;
+
+NET SW0  LOC = G18;
+NET SW1  LOC = H18;
+NET SW2  LOC = K18;
+NET SW3  LOC = K17;
+NET SW4  LOC = L14;
+NET SW5  LOC = L13;
+NET SW6  LOC = N17;
+NET SW7  LOC = R17;
+
+ NET LD0  LOC = J14;
+ NET LD1  LOC = J15;
+ NET LD2  LOC = K15;
+ NET LD3  LOC = K14;
+# in the case of Nexys2 1200K or 1600K, the LD4, LD5, LD6, LD7 are connected as:
+# NET LD4  LOC = E16;
+# NET LD5  LOC = P16;
+# NET LD6  LOC = E4;
+# NET LD7  LOC = P4;
+
+# in the case of Nexys2 500K, the LD4, LD5, LD6, LD7 are connected as:
+
+NET LD4  LOC = E17;
+NET LD5  LOC = P15;
+NET LD6  LOC = F4;
+NET LD7  LOC = R4;
+
+NET BTN0  LOC = B18;
+NET BTN1  LOC = D18;
+NET BTN2  LOC = E18;
+NET BTN3  LOC = H13;
+
+ NET AN0  LOC = F17;
+ NET AN1  LOC = H17;
+ NET AN2  LOC = C18;
+ NET AN3  LOC = F15;
+
+NET CA  LOC = L18;
+NET CB  LOC = F18;
+NET CC  LOC = D17;
+NET CD  LOC = D16;
+NET CE  LOC = G14;
+NET CF  LOC = J17;
+NET CG  LOC = H14;
+
+NET DP  LOC = C17;
+
+# NET "CLKPORT" TNM_NET = "CLKPORT";
+NET "CLKPORT" PERIOD = 20.0ns HIGH 50%;
+
+
+# NET "Btn3" CLOCK_DEDICATED_ROUTE = FALSE;
+# The above "CLOCK_DEDICATED_ROUTE = FALSE" line 
+# is to fix an erroneous use of BUFGP for Btn3 as in:
+# BUFGP BUFGP2 (reset, Btn3);
